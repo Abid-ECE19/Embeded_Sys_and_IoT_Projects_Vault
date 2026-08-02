@@ -1,4 +1,4 @@
-# IoT-Projects-Vault
+# Projects_Vault
 Before we start using microcontrollers like ESP32, Raspberry Pi Pico, Arduino etc., we need to know about their safe usage margins. Almost all of them operates on 5V DC power, so anything higher then that can fry up these delicate controllers. And in terms of data I/O (or GPIO pins), all controllers strictly requires 3.3V on board. so while connecting LEDs, switches from GPIO pins to GND, must use a resistor in series, otherwise; the board will be short-circuited.
 
 ## For ESP32 module
