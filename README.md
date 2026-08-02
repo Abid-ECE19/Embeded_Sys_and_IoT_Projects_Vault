@@ -3,26 +3,39 @@ Before we start using microcontrollers like ESP32, Raspberry Pi Pico, Arduino et
 
 ## For ESP32 module
 **Safe pins (GPIO)**: 12 to 31
+
 **Analog Input pins**: 32 to 39
+
 **Analog Output pins**: 25 &amp; 26
+
 **Pins to avoid (memory flash)**: 6 to 11
+
 **PWM pins**: 1 &amp; 3
+
 **Wi-Fi friendly pins**: 32 to 39
 
 ## For ESP8266 module
 **Safe pins (GPIO)**: 12 to 16
+
 **Analog Input pins**: A0 (17)
+
 **Pins to avoid (memory flash)**: 6 to 11
+
 **PWM pins**: 1 &amp; 3
 
 ## For Raspberry Pi Pico module
 **Safe pins (GPIO)**: 0 to 25
+
 **Analog Input pins**: 26, 27, 28
 
 ## List of some commonly used sensors
 **DHT11/DHT22**: Temperature &amp; Humidity sensor {Type: Digital}
+
 **LDR**: Light Dependent Resistor (measures light intensity) {Type: Analog}
+
 **PIR (HC-SR501)**: Passive IR sensor (detects motion based on IR) {Type: Digital}
+
 **Ultrasonic (HC-SR04)**: Distance measurement sensor (via ultrasound) {Type: Digital}
+
 **Bluetooth Module (HC-06)**: Bluetooth module for Arduino (uses PWM RX, TX terminals)
 
