@@ -48,7 +48,7 @@ bool lastValveState = false;                   // Tracks the previous state of t
 unsigned long pumpStartTime = 0;               // Timestamp of when the pump turned ON
 unsigned long totalPumpTimeMs = 0;             // Total pump runtime (milliseconds)
 float totalWaterUsedLiters = 0.0;              // Cumulative water used (Liters)
-const float PUMP_FLOW_RATE_LPM = 2.0;          // Water flow rate (Liters per Minute)
+const float PUMP_FLOW_RATE_LPM = 20.0;          // Water flow rate (Liters per Minute)
 
 
 // Function to estabilish MQTT connection
