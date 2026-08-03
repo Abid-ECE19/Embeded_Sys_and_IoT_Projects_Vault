@@ -35,11 +35,21 @@ Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT,"Wokwi_ESP32_AgriN
 Adafruit_MQTT_Publish temp_feed = Adafruit_MQTT_Publish(&mqtt, "SkxxID_26$39*5/feeds/temperature");
 Adafruit_MQTT_Publish hum_feed = Adafruit_MQTT_Publish(&mqtt,  "SkxxID_26$39*5/feeds/humidity");
 Adafruit_MQTT_Publish soil_feed = Adafruit_MQTT_Publish(&mqtt, "SkxxID_26$39*5/feeds/soil-moisture");
+Adafruit_MQTT_Publish runtime_feed = Adafruit_MQTT_Publish(&mqtt, "SkxxID_26$39*5/feeds/pump-runtime");
+Adafruit_MQTT_Publish water_feed = Adafruit_MQTT_Publish(&mqtt, "SkxxID_26$39*5/feeds/water-usage");
 
 // Thresholds & Timing
 const int DRY_SOIL_THRESHOLD = 1500;            // Higher than 1500 means soil is dry
 const unsigned long TELEMETRY_INTERVAL = 5000; // Increased to 5s for stable cloud uploads
 unsigned long lastTelemetryTime = 0;
+
+// Pump Tracking & Water Usage Variables
+bool lastValveState = false;                   // Tracks the previous state of the valve
+unsigned long pumpStartTime = 0;               // Timestamp of when the pump turned ON
+unsigned long totalPumpTimeMs = 0;             // Total pump runtime (milliseconds)
+float totalWaterUsedLiters = 0.0;              // Cumulative water used (Liters)
+const float PUMP_FLOW_RATE_LPM = 2.0;          // Water flow rate (Liters per Minute)
+
 
 // Function to estabilish MQTT connection
 void MQTT_connect();
@@ -79,7 +89,7 @@ void loop() {
     // Read localized environmental variables
     float humidity = dht.readHumidity();
     float temperature = dht.readTemperature();
-    int soilMoistureRaw = analogRead(SOIL_MOISTURE_PIN); 
+    float soilMoistureRaw = analogRead(SOIL_MOISTURE_PIN); 
 
     if (isnan(humidity) || isnan(temperature)) {
       Serial.println("[ERROR] Failed to read from DHT22 array.");
@@ -89,23 +99,50 @@ void loop() {
     // Local Automation Logic
     bool valveActive = false;
     if (soilMoistureRaw > DRY_SOIL_THRESHOLD) {
-      digitalWrite(VALVE_RELAY_PIN, HIGH); 
-      valveActive = true;
+        digitalWrite(VALVE_RELAY_PIN, HIGH);
+        valveActive = true;
     } else {
-      digitalWrite(VALVE_RELAY_PIN, LOW); 
-      valveActive = false;
+        digitalWrite(VALVE_RELAY_PIN, LOW);
+        valveActive = false;
     }
+
+    // --- NEW: Track Pump Runtime and Water Usage ---
+    if (valveActive == true && lastValveState == false) {
+        pumpStartTime = millis();
+        Serial.println("[PUMP] Turned ON. Starting timer...");
+    } 
+    else if (valveActive == false && lastValveState == true) {
+        // Pump just turned OFF: Calculate duration for this specific session
+        unsigned long sessionDurationMs = millis() - pumpStartTime;
+        totalPumpTimeMs += sessionDurationMs; // Add to running lifetime total
+
+        // Convert duration to minutes
+        float sessionDurationMinutes = sessionDurationMs / 60000.0;
+        float sessionWaterUsed = sessionDurationMinutes * PUMP_FLOW_RATE_LPM;
+        totalWaterUsedLiters += sessionWaterUsed; // Add to running lifetime total
+
+        Serial.println("\n>>> PUMP SESSION ENDED <<<");
+        Serial.print("Pump Runtime: "); Serial.print(sessionDurationMs / 1000.0); Serial.println(" seconds");
+        Serial.print("Water Used: "); Serial.print(sessionWaterUsed); Serial.println(" Liters");
+    }
+    
+    // Save current state for the next loop comparison
+    lastValveState = valveActive; 
+
 
     // Local Data Printing
     Serial.println("\n>>> PUSHING DATA TO CLOUD <<<");
     Serial.print("Temp: "); Serial.print(temperature); Serial.println("C");
     Serial.print("Humidity: "); Serial.print(humidity); Serial.println("%");
-    Serial.print("Soil Index: "); Serial.println(soilMoistureRaw);
+    Serial.print("Soil Dryness: "); Serial.print(soilMoistureRaw / 40.96); Serial.println("%");
 
-    // IoT Transmission: Push data live over the internet to your cloud feeds
+    // IoT Transmission: Push data live over the internet to cloud feeds
     if (!temp_feed.publish(temperature)) Serial.println("Failed to upload Temperature");
     if (!hum_feed.publish(humidity)) Serial.println("Failed to upload Humidity");
-    if (!soil_feed.publish((int32_t)soilMoistureRaw)) Serial.println("Failed to upload Soil Moisture");
+    if (!soil_feed.publish(soilMoistureRaw)) Serial.println("Failed to upload Soil Moisture");
+    if (!runtime_feed.publish((uint32_t)(totalPumpTimeMs / 1000))) Serial.println("Failed to upload Pump Runtime");   
+    if (!water_feed.publish(totalWaterUsedLiters)) Serial.println("Failed to upload Water Usage");
+
   }
 }
 
