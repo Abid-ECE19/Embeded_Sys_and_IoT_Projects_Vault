@@ -46,6 +46,6 @@ Even if the server connection fails, the system can work offline as the evaluati
 
     WHEN soilMoistureRaw < DRY_SOIL_THRESHOLD (means hydrated) 
 
-    {pupm turns OFF. Pump session & total water usage is calculated and sent to cloud feed}
+    {pump turns OFF. Pump session & total water usage is calculated and sent to cloud feed}
 
 4. RETRY MQTT SERVER CONNECTION (activates only when step 2 fails. Return to step 3)
