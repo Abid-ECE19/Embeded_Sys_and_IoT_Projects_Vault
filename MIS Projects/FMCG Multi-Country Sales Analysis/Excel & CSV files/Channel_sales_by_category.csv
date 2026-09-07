@@ -1,0 +1,21 @@
+channel,category,total_units_sold,total_net_sales
+Convenience,Snacks,479760,4269244.890000058
+Convenience,Beverages,542608,2770428.9700000007
+Convenience,"Personal Care",340292,2330462.10000002
+Convenience,Dairy,229224,1938451.3200000029
+Convenience,"Home Care",138408,1207562.3199999635
+E-commerce,Snacks,3698628,26439695.10000008
+E-commerce,Beverages,4223371,24752919.880000066
+E-commerce,Dairy,2603099,22684501.639999866
+E-commerce,"Personal Care",2617593,21965956.71000007
+E-commerce,"Home Care",2505289,16891449.78999997
+Hypermarket,Snacks,9267973,73714066.5199999
+Hypermarket,Beverages,9794520,57222777.27999895
+Hypermarket,"Personal Care",5791303,47838736.490000315
+Hypermarket,Dairy,5535111,45045637.31000058
+Hypermarket,"Home Care",4952514,34916903.10000047
+Supermarket,Snacks,3278243,25720240.03
+Supermarket,Beverages,3529887,19357605.549999714
+Supermarket,"Personal Care",2050392,17415134.34000026
+Supermarket,Dairy,1856768,14151940.709999884
+Supermarket,"Home Care",1680999,12312738.780000022

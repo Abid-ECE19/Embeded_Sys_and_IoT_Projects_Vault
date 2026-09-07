@@ -1,0 +1,21 @@
+country,sku_id,sku_name,total_units_sold,stockout_records,stockout_rate_pct
+Italy,SKU0006,"BrandF Soda",536635,128,2.92
+Italy,SKU0001,"BrandA Soda",527221,113,2.58
+Italy,SKU0004,"BrandD Soda",409229,139,3.17
+Italy,SKU0017,"BrandE Water",405251,115,3.50
+Italy,SKU0070,"BrandD Detergent",401889,127,2.90
+Italy,SKU0028,"BrandD Chips",400990,136,3.11
+Italy,SKU0005,"BrandE Soda",398291,138,3.15
+Spain,SKU0006,"BrandF Soda",396539,102,3.11
+Spain,SKU0001,"BrandA Soda",385240,87,2.65
+Italy,SKU0096,"BrandF Soap",376585,146,3.33
+Italy,SKU0054,"BrandF Yogurt",376047,125,2.85
+Italy,SKU0035,"BrandE Chocolate",374805,109,3.32
+Italy,SKU0046,"BrandD Nuts",373187,126,2.88
+Italy,SKU0058,"BrandD Milk",365125,136,3.11
+Italy,SKU0037,"BrandA Biscuits",363479,117,2.67
+Italy,SKU0064,"BrandD Cheese",362810,123,2.81
+Italy,SKU0034,"BrandD Chocolate",362113,100,3.04
+Spain,SKU0035,"BrandE Chocolate",353053,103,3.14
+Italy,SKU0069,"BrandC Detergent",352383,118,2.69
+Spain,SKU0034,"BrandD Chocolate",337940,94,2.86

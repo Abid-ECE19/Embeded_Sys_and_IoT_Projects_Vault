@@ -1,0 +1,21 @@
+sku_id,sku_name,stockout_records,total_records,stockout_rate_pct
+SKU0043,"BrandA Nuts",344,9855,3.49
+SKU0029,"BrandE Chips",295,8760,3.37
+SKU0072,"BrandF Detergent",329,9855,3.34
+SKU0027,"BrandC Chips",361,10950,3.30
+SKU0077,"BrandE Softener",360,10950,3.29
+SKU0004,"BrandD Soda",359,10950,3.28
+SKU0011,"BrandE Juice",321,9855,3.26
+SKU0059,"BrandE Milk",286,8760,3.26
+SKU0025,"BrandA Chips",392,12045,3.25
+SKU0081,"BrandC Cleaner",317,9855,3.22
+SKU0099,"BrandC Toothpaste",388,12045,3.22
+SKU0100,"BrandD Toothpaste",351,10950,3.21
+SKU0005,"BrandE Soda",352,10950,3.21
+SKU0083,"BrandE Cleaner",281,8760,3.21
+SKU0063,"BrandC Cheese",350,10950,3.20
+SKU0022,"BrandD Energy drink",314,9855,3.19
+SKU0058,"BrandD Milk",383,12045,3.18
+SKU0067,"BrandA Detergent",312,9855,3.17
+SKU0056,"BrandB Milk",417,13140,3.17
+SKU0041,"BrandE Biscuits",347,10950,3.17

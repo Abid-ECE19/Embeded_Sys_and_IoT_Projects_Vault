@@ -1,0 +1,21 @@
+sku_id,sku_name,category,brand,total_net_sales
+SKU0018,"BrandF Water",Beverages,BrandF,17032424.64000005
+SKU0027,"BrandC Chips",Snacks,BrandC,16000295.020000022
+SKU0026,"BrandB Chips",Snacks,BrandB,13025419.729999946
+SKU0099,"BrandC Toothpaste","Personal Care",BrandC,12968809.430000024
+SKU0092,"BrandB Soap","Personal Care",BrandB,12496995.900000015
+SKU0100,"BrandD Toothpaste","Personal Care",BrandD,12351150.679999948
+SKU0064,"BrandD Cheese",Dairy,BrandD,12326993.999999983
+SKU0061,"BrandA Cheese",Dairy,BrandA,11967260.40000001
+SKU0028,"BrandD Chips",Snacks,BrandD,11749108.590000013
+SKU0097,"BrandA Toothpaste","Personal Care",BrandA,11594508.709999945
+SKU0041,"BrandE Biscuits",Snacks,BrandE,10887379.869999947
+SKU0038,"BrandB Biscuits",Snacks,BrandB,10826032.600000015
+SKU0058,"BrandD Milk",Dairy,BrandD,10664140.199999984
+SKU0001,"BrandA Soda",Beverages,BrandA,10515682.82999999
+SKU0057,"BrandC Milk",Dairy,BrandC,10224239.219999965
+SKU0005,"BrandE Soda",Beverages,BrandE,9685683.360000014
+SKU0060,"BrandF Milk",Dairy,BrandF,9466848
+SKU0048,"BrandF Nuts",Snacks,BrandF,8917389.910000015
+SKU0002,"BrandB Soda",Beverages,BrandB,8625588.75
+SKU0045,"BrandC Nuts",Snacks,BrandC,8089038.530000008

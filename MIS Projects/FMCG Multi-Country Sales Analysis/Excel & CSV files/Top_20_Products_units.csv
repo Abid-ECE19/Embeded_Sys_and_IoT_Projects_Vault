@@ -1,0 +1,21 @@
+sku_id,sku_name,category,total_units_sold
+SKU0001,"BrandA Soda",Beverages,1792381
+SKU0006,"BrandF Soda",Beverages,1662175
+SKU0035,"BrandE Chocolate",Snacks,1455704
+SKU0096,"BrandF Soap","Personal Care",1286230
+SKU0028,"BrandD Chips",Snacks,1253907
+SKU0017,"BrandE Water",Beverages,1243211
+SKU0099,"BrandC Toothpaste","Personal Care",1242389
+SKU0027,"BrandC Chips",Snacks,1200897
+SKU0034,"BrandD Chocolate",Snacks,1190066
+SKU0018,"BrandF Water",Beverages,1173032
+SKU0013,"BrandA Water",Beverages,1134258
+SKU0046,"BrandD Nuts",Snacks,1105834
+SKU0070,"BrandD Detergent","Home Care",1101644
+SKU0004,"BrandD Soda",Beverages,1098948
+SKU0005,"BrandE Soda",Beverages,1096500
+SKU0058,"BrandD Milk",Dairy,1080460
+SKU0102,"BrandF Toothpaste","Personal Care",1028846
+SKU0022,"BrandD Energy drink",Beverages,1022747
+SKU0037,"BrandA Biscuits",Snacks,1014756
+SKU0023,"BrandE Energy drink",Beverages,1004554
